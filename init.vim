@@ -348,10 +348,10 @@ func! CompileRunGcc()
 		exec "!time ./%<"
 	elseif &filetype == 'cpp'
 		set splitbelow
-		exec "!g++ -std=c++11 % -Wall -o %<"
+		exec "!g++ -std=c++11 % -Wall -o %<.out"
 		:set splitright
 		:vsp
-		:term ./%<
+		:term ./%:r.out
 	elseif &filetype == 'java'
 		exec "!javac %"
 		exec "!time java %<"
