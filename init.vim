@@ -61,73 +61,8 @@ map sj :set splitbelow<CR>:split<CR>
 map sk :set nosplitbelow<CR>:split<CR>
 
 
+source ~/.config/nvim/config/plug.vim
 
-"添加头文件
-map <F9> :call HeadFile()<CR>
-function HeadFile()
-
-    call append(0,"#include <bits/stdc++.h>")
-    call append(1,"")
-    call append(2,"")
-    call append(3,"using namespace std;")
-    call append(4,"")
-    call append(5,"typedef long long LL;")
-    call append(6,"typedef unsigned long long ULL;")
-    call append(7,"typedef pair<int, int> PII;")
-    call append(8,"const int INF = 0x3f3f3f3f;")
-    call append(9,"const int mod = 1e9 + 7;")
-    call append(10,"const int N = 1e5 + 9;")
-    call append(11,"int h[N], w[N], ne[N], e[N], idx;")
-    call append(12,"int n, m;")
-	call append(13,"")
-	call append(14,"int main() {")
-	call append(15,"    return 0;")
-	call append(16,"}")
-	exec "/int main"
-    echohl WarningMsg | echo "Successful in adding copyright." | echohl None
-endf
-
-
-
-
-call plug#begin('~/.vim/plugged')
-
-
-
-" === airline
-Plug 'vim-airline/vim-airline'
-
-"=== startify
-Plug 'mhinz/vim-startify'
-
-Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-" === auto-pairs
-Plug 'jiangmiao/auto-pairs' 
-
-" === markdown
-Plug 'instant-markdown/vim-instant-markdown'
-
-" latex
-Plug 'lervag/vimtex'
-Plug 'vim-latex/vim-latex'
-
-" === rnvimr
-Plug 'kevinhwang91/rnvimr'
-
-" ===coc.nvim
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" ===tokyonight
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-
-call plug#end()
-
-" snazzy
-" let g:SnazzyTransparent = 1
-" color snazzy
 "colorscheme molokai
 colorscheme tokyonight
 
@@ -404,15 +339,3 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
-
-" 显示中文帮助
-if version >= 603
-
-    set helplang=cn
-
-    set encoding=utf-8
-
-endif
-
-
-
